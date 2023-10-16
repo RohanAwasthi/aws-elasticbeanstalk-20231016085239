@@ -1,0 +1,33 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "my-java-application"
+
+  links:
+    - url: https://github.com/RohanAwasthi/aws-elasticbeanstalk-20231016085239
+      title: "my-java-application"
+      icon: code
+
+  labels:
+    system: web-apps
+    trackid: "aws-elasticbeanstalk-20231016085239"
+    environmentname: my-java-env
+
+  tags:
+    - java
+    - aws
+    - "applicationtype-webapplication"
+
+  annotations:
+    # add elastic beanstalk annotation
+    jenkins.io/github-folder: 'custom-actions/tf-my-java-application'
+    github.com/project-slug: RohanAwasthi/aws-elasticbeanstalk-20231016085239
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/linguist: https://github.com/ItRachii/spring-boot-ebs
+    sonarqube.org/project-key: 'demo-app/aws-elb-java'
+
+spec:
+  type: service
+  lifecycle: experimental
+  system: elasticbeanstalk
+  owner: "group:default/ey"
